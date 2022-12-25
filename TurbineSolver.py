@@ -71,11 +71,11 @@ class Turbine:
 
         if self.choice == "W":
             self.W = Calculator.W_solver(self.Q, self.m, self.h1, self.h2)
-            print("The work done by the turbine is {W} kJ/kg.".format(W = self.W)) 
+            print("The power outputted by the turbine is {W} kW.".format(W = self.W)) 
     
         if self.choice == "Q":
             self.Q = Calculator.Q_solver(self.W, self.m, self.h1, self.h2)
-            print("The specific heat transfer is {Q} kJ/kg.".format(Q = self.Q))
+            print("The heat transfer rate is {Q} kW.".format(Q = self.Q))
 
         if self.choice == "m":
             self.m = Calculator.mass_solver(self.Q, self.W, self.h1, self.h2)
@@ -137,10 +137,10 @@ class Asker:
         return float(input("What is the mass flow rate, in kg/s? "))
 
     def ask_Q():
-        return float(input("What is the heat transfer, in kJ? "))    
+        return float(input("What is the heat transfer, in kW? "))    
 
     def ask_W():
-        return float(input("What is the work done by the turbine, in kJ? "))
+        return float(input("What is the work done by the turbine, in kW? "))
 
 #Intro to the project
 print("Welcome to the turbine solver. For this, we assume no change in kinetic or potential energy, steady state, and steady flow.")    
